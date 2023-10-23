@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1697950877 source:d:\q7assignment2\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1697950877 source:d:\assignment2\q7assignment2\main.c
+	<stdio.h>
+	<stdlib.h>
+
