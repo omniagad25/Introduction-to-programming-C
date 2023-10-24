@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1698062260 source:d:\menulab\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<dos.h>
+	<dir.h>
+	<stdlib.h>
+
