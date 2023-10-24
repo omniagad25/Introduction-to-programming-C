@@ -1,0 +1,303 @@
+Q1:
+
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 4
+
+float Avg(float sum, int row, int col);
+
+int main()
+{
+    float sum=0;
+    int row, col;
+    printf("Kindly enter the number of rows\n");
+    scanf("%d",&row);
+    printf("Please add the number of columns\n");
+    scanf("%d",&col);
+    float Arr[row][col];
+    printf("Please enter %d numbers in the matrix\n",row*col);
+    for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                scanf("%f",&Arr[i][j]);
+                sum=sum+Arr[i][j];
+            }
+    }
+    printf("The average is %f",Avg(sum, row,col));
+
+    return 0;
+}
+
+float Avg(float sum,int row, int col){
+
+    return sum/(row*col);
+}
+_________________________________________________________________________________________________
+
+Q2:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int row, col;
+    printf("Kindly enter the number of rows\n");
+    scanf("%d",&row);
+    printf("Please add the number of columns\n");
+    scanf("%d",&col);
+    float Arr1[row][col], Arr2[row][col],Arr3[row][col];
+    printf("Please enter %d numbers in the matrix of the first array\n",row*col);
+    for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                scanf("%f",&Arr1[i][j]);
+
+            }
+    }
+    printf("Please enter %d numbers in the matrix of the second array\n",row*col);
+    for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                scanf("%f",&Arr2[i][j]);
+                Arr3[i][j]=Arr1[i][j]+Arr2[i][j];
+            }
+    }
+    printf("The sum of the matrix is:");
+    for(int i=0;i<row;i++){
+        printf("\n");
+            for(int j=0;j<col;j++){
+                printf("%.2f ", Arr3[i][j]);
+            }
+    }
+    return 0;
+}
+_____________________________________________________________________________________________
+
+Q3:
+
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 10
+
+int main()
+{
+    char Arr[SIZE];
+    printf("Please enter the character\n");
+        scanf(" %[^\n]s",&Arr);
+
+        printf("The array is: %s\n",Arr);
+    return 0;
+}
+
+_____________________________________________________________________________________________
+
+Q4:
+
+#include <stdio.h>
+#include <stdlib.h>
+#define right 77
+#define end 79
+#define left 75
+
+
+int main()
+{
+    char ch;
+    if(-32==getch){
+        printf("Extended key");
+    }
+    else{
+        printf("Not extended key");
+    }
+    return 0;
+}
+_____________________________________________________________________________________________
+
+Q5:
+
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 10
+
+int main()
+{
+    char firstN[SIZE], secondN[SIZE];
+    printf("Please enter your first name:\n");
+    scanf("%s",&firstN);
+    printf("Please enter your second name:\n");
+    scanf("%s",&secondN);
+    printf("The full name is %s %s", firstN,secondN);
+    return 0;
+}
+
+_____________________________________________________________________________________________
+
+Q6:
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
+#include <dos.h>
+#include <dir.h>
+void SetColor(int ForgC){
+     WORD wColor;
+
+      HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+      CONSOLE_SCREEN_BUFFER_INFO csbi;
+
+                       //We use csbi for the wAttributes word.
+     if(GetConsoleScreenBufferInfo(hStdOut, &csbi))
+     {
+                 //Mask out all but the background attribute, and add in the forgournd     color
+          wColor = (csbi.wAttributes & 0xF0) + (ForgC & 0x0F);
+          SetConsoleTextAttribute(hStdOut, wColor);
+     }
+     return;
+ }
+  void gotoxy(int x,int y)
+ {
+   COORD coord={0,0};
+   coord.X=x;
+   coord.Y=y;
+   SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coord);
+ }
+
+int main()
+{
+    printf("Hello world!\n");
+    return 0;
+}
+
+_____________________________________________________________________________________________
+
+Q7:
+
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 10
+
+int main()
+{
+    char str[SIZE];
+    int c=0,x;
+    printf("Please enter the string\n");
+    scanf("%[^\n]s",&str);
+    /*for(int i = 0; str[i] != '\0';i++){
+        for(int j=i+1;j<SIZE/2;j++){
+            if(str[i]==str[j] && str[i]!=' '){
+                count++;
+            }
+
+        }
+         printf("The frequency is %d\n",count);
+        count=1;
+    }*/
+     while (str[c] != '\0') {
+   /** Considering characters from 'a' to 'z' only and ignoring others. */
+
+      if (str[c] >= 'a' && str[c] <= 'z') {
+         x = str[c] - 'a';
+         count[x]++;
+      }
+
+      c++;
+   }
+
+   for (c = 0; c < 26; c++)
+         printf("%c occurs %d times in the string.\n", c + 'a', count[c]);
+    return 0;
+}
+
+_____________________________________________________________________________________________
+
+Q8:
+
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 20
+
+int main()
+{
+    char Arr[SIZE],cpy[SIZE];
+    printf("Please enter a string\n");
+    scanf("%[^\n]s",&Arr);
+    for(int i=0;i<SIZE && Arr[i] != '\0';i++){
+        cpy[i]=Arr[i];
+    }
+    printf("The copied array is: %s",cpy);
+    return 0;
+}
+
+_____________________________________________________________________________________________
+
+Q9:
+
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 30
+
+int main()
+{
+    char Arr[SIZE];
+    int count=0;
+    printf("Please enter a string\n");
+    scanf("%[^\n]s",&Arr);
+    for(int i=0;i<SIZE && Arr[i] != '\0';i++){
+        count++;
+    }
+    printf("The number of characters is: %d",count);
+
+    return 0;
+}
+
+_____________________________________________________________________________________________
+
+Q10:
+
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 50
+
+int main()
+{
+  char str[SIZE];
+  char str2[SIZE];
+
+  printf("Enter A String:\n");
+  scanf("%s",&str);
+
+  int len = SIZE;
+
+  for (int i = 0; i < len; i++)
+  {
+    if (((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')))
+    {
+      str2[i]=str[i];
+    }
+  }
+
+  printf("The Final String after Sorting Alphabetically = %s\n", str2);
+}
+
+_____________________________________________________________________________________________
+
+Q11:
+
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 50
+
+int main()
+{
+    char str[SIZE];
+   printf("Enter a string:\n");
+   scanf("%[^\n]s",&str);
+   for (int i = 0; str[i]!='\0'; i++) {
+      if(str[i] >= 'a' && str[i] <= 'z') {
+         str[i] = str[i] -32;
+      }
+   }
+   printf("The string in Upper Case is %s", str);
+   return 0;
+}
+
+
+
